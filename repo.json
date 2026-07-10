@@ -1,0 +1,9 @@
+{
+  "name": "Magic IPTV Repository",
+  "description": "Live IPTV channels from Cloudflare D1",
+  "iconUrl": "https://raw.githubusercontent.com/Ashishsri2018/CSX-IPTV/master/IPTVPlugin/icon.png",
+  "manifestVersion": 2,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/Ashishsri2018/CSX-IPTV/builds/plugins.json"
+  ]
+}

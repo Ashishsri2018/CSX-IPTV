@@ -1,0 +1,41 @@
+name: Build CS3 Plugins
+
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build Plugins & JSON
+        # Updated to the modern Gradle commands
+        run: |
+          chmod +x gradlew
+          ./gradlew make makePluginsJson
+
+      - name: Prepare Deployment Folder
+        # Collects the scattered outputs into one directory
+        run: |
+          mkdir -p output_builds
+          cp **/build/*.cs3 output_builds/ || true
+          cp build/plugins.json output_builds/ || true
+
+      - name: Deploy to Builds Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output_builds
+          publish_branch: builds
+          force_orphan: true
+          commit_message: "Fix CI/CD pipeline and build CS3"
