@@ -1,0 +1,23 @@
+[
+    {
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Korduene_Logo.png",
+        "fileHash": "sha256-77e666e4b51e43181067391ad1ce9a2df44a6816bd317ef387e5e8e7b7621d81",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/Ashishsri2018/CSX-IPTV",
+        "fileSize": 28917,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Cloudburst",
+            "Luna712"
+        ],
+        "tvTypes": [
+            "iptv"
+        ],
+        "version": 25,
+        "internalName": "IPTVPlugin",
+        "description": "iptv",
+        "url": "https://raw.githubusercontent.com/Ashishsri2018/CSX-IPTV/builds/IPTVPlugin.cs3",
+        "name": "IPTVPlugin"
+    }
+]
